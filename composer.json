@@ -1,0 +1,17 @@
+{
+    "name": "sirprize/postal-code-validator",
+    "type": "library",
+    "description": "Validate Formatting Of World-Wide Postal Codes",
+    "keywords": ["postal code", "zip code", "validator"],
+    "homepage": "https://github.com/sirprize/postal-code-validator",
+    "license": "MIT",
+    "authors": [
+        { "name": "Christian Hoegl", "email": "chrigu@sirprize.me" }
+    ],
+    "autoload": {
+        "psr-0": { "Sirprize\\PostalCodeValidator": "lib/" }
+    },
+    "require": {
+        "php": ">=5.3.2"
+    }
+}
