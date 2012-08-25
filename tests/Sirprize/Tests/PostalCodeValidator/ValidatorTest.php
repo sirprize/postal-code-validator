@@ -94,16 +94,4 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $validator = new Validator();
         $this->assertTrue($validator->isValid('SE', '11337'));
     }
-    
-    public function testCheckFormatsForCountries()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->checkFormatsForCountries());
-    }
-    
-    public function testCheckCountriesForFormats()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->checkCountriesForFormats());
-    }
 }
