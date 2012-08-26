@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PostalCodeValidator package
+ * This file is part of the postal-code-validator package
  *
  * (c) Christian Hoegl <chrigu@sirprize.me>
  */

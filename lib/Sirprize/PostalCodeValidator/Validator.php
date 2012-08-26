@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PostalCodeValidator package
+ * This file is part of the postal-code-validator package
  *
  * (c) Christian Hoegl <chrigu@sirprize.me>
  */
@@ -22,7 +22,6 @@ class Validator
      *     # - numberic 0-9
      *     @ - alpha a-zA-Z
      *     * - alphanumerica a-zA-Z0-9
-     *     - - dash
      */
     protected $formats = array(
         'AF' => array('####'),                      # AFGHANISTAN
@@ -267,14 +266,7 @@ class Validator
         'ZM' => array('#####'),                     # ZAMBIA
         'ZW' => array()                             # ZIMBABWE
     );
-    
-    /*
-     * country code: ISO 3166 2-letter code
-     * format:
-     *     # - 0-9
-     *     @ - a-zA-Z
-     *     * - a-zA-Z0-9
-     */
+
     public function isValid($countryCode, $postalCode)
     {
         if(!isset($this->formats[$countryCode]))
@@ -293,7 +285,7 @@ class Validator
         
         if(!count($this->formats[$countryCode]))
         {
-            
+            return true;
         }
         
         return false;
