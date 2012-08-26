@@ -26,11 +26,15 @@ Validate Formatting of World-Wide Postal Codes
     $validator = new Validator();
     $validator->getFormats('GB'); // returns array('@# #@@', '@** #@@', '@@#* #@@')
 
-## Formats
+## Formatting
 
 + `#` = `0-9`
 + `@` = `a-zA-Z`
 + `*` = `a-zA-Z0-9`
+
+## Country Codes
+
+Postal-code-validator uses ISO 3166 2-letter country codes
 
 ## License
 
