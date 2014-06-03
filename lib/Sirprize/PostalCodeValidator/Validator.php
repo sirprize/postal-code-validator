@@ -46,7 +46,7 @@ class Validator
         'BY' => array('######'),                    # BELARUS
         'BE' => array('####'),                      # BELGIUM
         'BZ' => array(),                            # BELIZE
-        'BJ' => array(),                            # BENINSS
+        'BJ' => array(),                            # BENIN
         'BM' => array('@@ ##'),                     # BERMUDA
         'BT' => array(),                            # BHUTAN
         'BO' => array(),                            # BOLIVIA
