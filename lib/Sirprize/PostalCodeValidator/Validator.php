@@ -46,7 +46,7 @@ class Validator
         'BY' => array('######'),                    # BELARUS
         'BE' => array('####'),                      # BELGIUM
         'BZ' => array(),                            # BELIZE
-        'BJ' => array(),                            # BENIN
+        'BJ' => array(),                            # BENINSS
         'BM' => array('@@ ##'),                     # BERMUDA
         'BT' => array(),                            # BHUTAN
         'BO' => array(),                            # BOLIVIA
@@ -264,7 +264,9 @@ class Validator
         'EH' => array('#####'),                     # WESTERN SAHARA
         'YE' => array(),                            # YEMEN
         'ZM' => array('#####'),                     # ZAMBIA
-        'ZW' => array()                             # ZIMBABWE
+        'ZW' => array(),                            # ZIMBABWE
+        'SS' => array(),                            # Südsudan
+        'KO' => array()                             # Kosovo
     );
 
     public function isValid($countryCode, $postalCode)
