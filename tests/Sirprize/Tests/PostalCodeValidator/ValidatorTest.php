@@ -100,6 +100,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $validator = new Validator();
         $this->assertTrue($validator->isValid('CZ', '602 00'));
         $this->assertFalse($validator->isValid('CZ', '60200'));
-        $this->assertTrue($validator->isValid('CZ', '60200',true));
+        $this->assertTrue($validator->isValid('CZ', '60200', true));
     }
 }

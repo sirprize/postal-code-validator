@@ -304,7 +304,7 @@ class Validator
         'ZW' => array(),                            # ZIMBABWE
     );
 
-    public function isValid($countryCode, $postalCode,$ignoreSpaces=false)
+    public function isValid($countryCode, $postalCode, $ignoreSpaces=false)
     {
         if(!isset($this->formats[$countryCode]))
         {
@@ -314,7 +314,7 @@ class Validator
         foreach($this->formats[$countryCode] as $format)
         {
             #echo $postalCode . ' - ' . $this->getFormatPattern($format)."\n";
-            if(preg_match($this->getFormatPattern($format,$ignoreSpaces), $postalCode))
+            if(preg_match($this->getFormatPattern($format, $ignoreSpaces), $postalCode))
             {
                 return true;
             }
@@ -343,7 +343,7 @@ class Validator
         return (isset($this->formats[$countryCode]));
     }
     
-    protected function getFormatPattern($format,$ignoreSpaces=false)
+    protected function getFormatPattern($format, $ignoreSpaces=false)
     {
         $pattern = str_replace('#', '\d', $format);
         $pattern = str_replace('@', '[a-zA-Z]', $pattern);
