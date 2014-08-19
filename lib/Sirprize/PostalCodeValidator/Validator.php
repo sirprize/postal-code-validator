@@ -304,7 +304,7 @@ class Validator
         'ZW' => array(),                            # ZIMBABWE
     );
 
-    public function isValid($countryCode, $postalCode, $ignoreSpaces=false)
+    public function isValid($countryCode, $postalCode, $ignoreSpaces = false)
     {
         if(!isset($this->formats[$countryCode]))
         {
@@ -343,15 +343,17 @@ class Validator
         return (isset($this->formats[$countryCode]));
     }
     
-    protected function getFormatPattern($format, $ignoreSpaces=false)
+    protected function getFormatPattern($format, $ignoreSpaces = false)
     {
         $pattern = str_replace('#', '\d', $format);
         $pattern = str_replace('@', '[a-zA-Z]', $pattern);
         $pattern = str_replace('*', '[a-zA-Z0-9]', $pattern);
+
         if ($ignoreSpaces)
         {
             $pattern = str_replace(' ', ' ?', $pattern);
         }
+
         return '/^' . $pattern . '$/';
     }
 }
