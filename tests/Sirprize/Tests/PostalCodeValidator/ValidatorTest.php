@@ -94,4 +94,12 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $validator = new Validator();
         $this->assertTrue($validator->isValid('SE', '11337'));
     }
+
+    public function testCzechCode()
+    {
+        $validator = new Validator();
+        $this->assertTrue($validator->isValid('CZ', '602 00'));
+        $this->assertFalse($validator->isValid('CZ', '60200'));
+        $this->assertTrue($validator->isValid('CZ', '60200', true));
+    }
 }
