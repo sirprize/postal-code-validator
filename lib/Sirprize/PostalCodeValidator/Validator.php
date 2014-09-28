@@ -137,7 +137,7 @@ class Validator
 
         'ID' => array('#####'),                     # INDONESIA
         'IE' => array(),                            # IRELAND
-        'IL' => array('#####'),                     # ISRAEL
+        'IL' => array('#####', '#######'),          # ISRAEL
         'IM' => array(),                            # Isle of Man
         'IN' => array('######'),                    # INDIA
         'IO' => array(),                            # BRITISH INDIAN OCEAN TERRITORY
