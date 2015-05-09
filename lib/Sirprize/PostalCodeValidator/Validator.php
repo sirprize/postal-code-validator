@@ -206,7 +206,7 @@ class Validator
         'NF' => array(),                            # NORFOLK ISLAND
         'NG' => array('######'),                    # NIGERIA
         'NI' => array('###-###-#'),                 # NICARAGUA
-        'NL' => array('#### @@', '####', '####@@'), # NETHERLANDS
+        'NL' => array('#### @@', '####@@'),         # NETHERLANDS
         'NO' => array('####'),                      # NORWAY
         'NP' => array('#####'),                     # NEPAL
         'NR' => array(),                            # NAURU
