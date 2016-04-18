@@ -34,7 +34,7 @@ Validate Formatting of World-Wide Postal Codes
 
 ## Country Codes
 
-Postal-code-validator uses ISO 3166 2-letter country codes
+Postal-code-validator uses [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 2-letter country codes
 
 ## License
 
