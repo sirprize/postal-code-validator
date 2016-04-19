@@ -21,20 +21,19 @@ class Validator
      * format:
      *     # - numberic 0-9
      *     @ - alpha a-zA-Z
-     *     * - alphanumerica a-zA-Z0-9
      */
     protected $formats = array(
         'AC' => array(),                            # Ascension
-        'AD' => array('#####', '@D###'),            # ANDORRA
+        'AD' => array(),                            # ANDORRA
         'AE' => array(),                            # UNITED ARAB EMIRATES
-        'AF' => array('####'),                      # AFGHANISTAN
+        'AF' => array(),                            # AFGHANISTAN
         'AG' => array(),                            # ANTIGUA AND BARBUDA
         'AI' => array(),                            # ANGUILLA
-        'AL' => array('####'),                      # ALBANIA
-        'AM' => array('####'),                      # ARMENIA
+        'AL' => array(),                            # ALBANIA
+        'AM' => array('######'),                    # ARMENIA
         'AN' => array(),                            # NETHERLANDS ANTILLES
         'AO' => array(),                            # ANGOLA
-        'AR' => array('####', '@####@@@'),          # ARGENTINA
+        'AR' => array('####'),                      # ARGENTINA
         'AS' => array('#####'),                     # AMERICAN SAMOA
         'AT' => array('####'),                      # AUSTRIA
         'AU' => array('####'),                      # AUSTRALIA
@@ -44,7 +43,7 @@ class Validator
         'AZ' => array('######', '####'),            # AZERBAIJAN
 
         'BA' => array('#####'),                     # BOSNIA AND HERZEGOWINA
-        'BB' => array('BB#####'),                   # BARBADOS
+        'BB' => array(),                            # BARBADOS
         'BD' => array('####'),                      # BANGLADESH
         'BE' => array('####'),                      # BELGIUM
         'BF' => array(),                            # BURKINA FASO
@@ -52,8 +51,8 @@ class Validator
         'BH' => array(),                            # BAHRAIN
         'BI' => array(),                            # BURUNDI
         'BJ' => array(),                            # BENIN
-        'BL' => array(),                            # Sankt Bartholomäus
-        'BM' => array('@@ ##'),                     # BERMUDA
+        'BL' => array('#####'),                     # Sankt Bartholomäus
+        'BM' => array(),                            # BERMUDA
         'BN' => array('@@####'),                    # BRUNEI DARUSSALAM
         'BO' => array(),                            # BOLIVIA
         'BQ' => array(),                            # Karibische Niederlande
@@ -65,7 +64,7 @@ class Validator
         'BY' => array('######'),                    # BELARUS
         'BZ' => array(),                            # BELIZE
 
-        'CA' => array('@#@ #@#', '@#@ #@'),         # CANADA
+        'CA' => array('@#@ #@#'),                   # CANADA
         'CC' => array(),                            # COCOS (KEELING) ISLANDS
         'CD' => array(),                            # CONGO, Democratic Republic of (was Zaire)
         'CF' => array(),                            # CENTRAL AFRICAN REPUBLIC
@@ -73,13 +72,13 @@ class Validator
         'CH' => array('####'),                      # SWITZERLAND
         'CI' => array(),                            # COTE D'IVOIRE
         'CK' => array(),                            # COOK ISLANDS
-        'CL' => array('#######'),                   # CHILE
+        'CL' => array(),                            # CHILE
         'CM' => array(),                            # CAMEROON
         'CN' => array('######'),                    # CHINA
-        'CO' => array('#####'),                     # COLOMBIA
-        'CR' => array('#####'),                     # COSTA RICA
+        'CO' => array(),                            # COLOMBIA
+        'CR' => array(),                            # COSTA RICA
         'CU' => array('#####'),                     # CUBA
-        'CV' => array('####'),                      # CAPE VERDE
+        'CV' => array(),                            # CAPE VERDE
         'CW' => array(),                            # Curaçao
         'CX' => array(),                            # CHRISTMAS ISLAND
         'CY' => array('####'),                      # Cyprus
@@ -89,31 +88,31 @@ class Validator
         'DJ' => array(),                            # DJIBOUTI
         'DK' => array('####'),                      # DENMARK
         'DM' => array(),                            # DOMINICA
-        'DO' => array('#####'),                     # DOMINICAN REPUBLIC
+        'DO' => array(),                            # DOMINICAN REPUBLIC
         'DZ' => array('#####'),                     # ALGERIA
 
-        'EC' => array('######'),                    # ECUADOR
+        'EC' => array(),                            # ECUADOR
         'EE' => array('#####'),                     # ESTONIA
-        'EG' => array('#####'),                     # EGYPT
-        'EH' => array('#####'),                     # WESTERN SAHARA
+        'EG' => array(),                            # EGYPT
+        'EH' => array(),                            # WESTERN SAHARA
         'ER' => array(),                            # ERITREA
         'ES' => array('#####'),                     # SPAIN
-        'ET' => array('####'),                      # ETHIOPIA
+        'ET' => array(),                            # ETHIOPIA
 
         'FI' => array('#####'),                     # FINLAND
         'FJ' => array(),                            # FIJI
-        'FK' => array('FIQQ 1ZZ'),                  # FALKLAND ISLANDS (MALVINAS)
-        'FM' => array('#####'),                     # MICRONESIA
-        'FO' => array('###'),                       # FAROE ISLANDS
+        'FK' => array(),                            # FALKLAND ISLANDS (MALVINAS)
+        'FM' => array(),                            # MICRONESIA
+        'FO' => array(),                            # FAROE ISLANDS
         'FR' => array('#####'),                     # FRANCE
         'FX' => array(),                            # FRANCE, METROPOLITAN
 
         'GA' => array(),                            # GABON
-        'GB' => array('@# #@@', '@** #@@', '@@#* #@@'), # UK
+        'GB' => array('@@## #@@', '@#@ #@@', '@@# #@@', '@@#@ #@@', '@## #@@', '@# #@@'), # UK
         'GD' => array(),                            # GRENADA
         'GE' => array('####'),                      # GEORGIA
         'GF' => array('#####'),                     # FRENCH GUIANA
-        'GG' => array(),                            # Guernsey
+        'GG' => array('@@# #@@'),                            # Guernsey
         'GH' => array(),                            # GHANA
         'GI' => array(),                            # GIBRALTAR
         'GL' => array('####'),                      # GREENLAND
@@ -122,62 +121,63 @@ class Validator
         'GP' => array('#####'),                     # GUADELOUPE
         'GQ' => array(),                            # EQUATORIAL GUINEA
         'GS' => array(),                            # SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
-        'GR' => array('#####', '### ##'),           # GREECE
-        'GT' => array('#####'),                     # GUATEMALA
+        'GR' => array('### ##'),                    # GREECE
+        'GT' => array(),                            # GUATEMALA
         'GU' => array('#####'),                     # GUAM
-        'GW' => array('####'),                      # GUINEA-BISSAU
+        'GW' => array(),                            # GUINEA-BISSAU
         'GY' => array(),                            # GUYANA
 
         'HK' => array(),                            # HONG KONG
         'HM' => array(),                            # HEARD AND MC DONALD ISLANDS
-        'HN' => array('#####'),                     # HONDURAS
+        'HN' => array(),                            # HONDURAS
         'HR' => array('#####'),                     # CROATIA
-        'HT' => array('####'),                      # HAITI
+        'HT' => array(),                            # HAITI
         'HU' => array('####'),                      # HUNGARY
 
+        'IC' => array('#####'),                     # THE CANARY ISLANDS
         'ID' => array('#####'),                     # INDONESIA
         'IE' => array(),                            # IRELAND
-        'IL' => array('#####', '#######'),          # ISRAEL
+        'IL' => array('#####'),                     # ISRAEL
         'IM' => array(),                            # Isle of Man
         'IN' => array('######'),                    # INDIA
         'IO' => array(),                            # BRITISH INDIAN OCEAN TERRITORY
-        'IQ' => array('#####'),                     # IRAQ
-        'IR' => array('#####'),                     # IRAN
+        'IQ' => array(),                            # IRAQ
+        'IR' => array(),                            # IRAN
         'IS' => array('###'),                       # ICELAND
         'IT' => array('#####'),                     # ITALY
 
-        'JE' => array(),                            # Jersey
-        'JM' => array('JM@@@##'),                   # JAMAICA
-        'JO' => array('#####'),                     # JORDAN
-        'JP' => array('###-####', '#######'),       # JAPAN
+        'JE' => array('@@# #@@'),                   # Jersey
+        'JM' => array(),                            # JAMAICA
+        'JO' => array(),                            # JORDAN
+        'JP' => array('###-####', '#######', '###'),# JAPAN
 
         'KE' => array('#####'),                     # KENYA
         'KG' => array('######'),                    # KYRGYZSTAN
-        'KH' => array('#####'),                     # CAMBODIA
+        'KH' => array(),                            # CAMBODIA
         'KI' => array(),                            # KIRIBATI
         'KM' => array(),                            # COMOROS
         'KN' => array(),                            # SAINT KITTS AND NEVIS
         'KO' => array(),                            # Kosovo
         'KP' => array(),                            # NORTH KOREA
         'KR' => array('###-###'),                   # SOUTH KOREA
-        'KW' => array('#####'),                     # KUWAIT
-        'KY' => array('KY#-####'),                  # CAYMAN ISLANDS
+        'KW' => array(),                            # KUWAIT
+        'KY' => array(),                            # CAYMAN ISLANDS
         'KZ' => array('######'),                    # KAZAKHSTAN
 
-        'LA' => array('#####'),                     # LAO PEOPLE'S DEMOCRATIC REPUBLIC
-        'LB' => array('####'),                      # LEBANON
+        'LA' => array(),                            # LAO PEOPLE'S DEMOCRATIC REPUBLIC
+        'LB' => array(),                            # LEBANON
         'LC' => array(),                            # SAINT LUCIA
         'LI' => array('####'),                      # LIECHTENSTEIN
-        'LK' => array('#####'),                     # SRI LANKA
-        'LR' => array('####'),                      # LIBERIA
-        'LS' => array('###'),                       # LESOTHO
+        'LK' => array(),                            # SRI LANKA
+        'LR' => array(),                            # LIBERIA
+        'LS' => array(),                            # LESOTHO
         'LT' => array('#####'),                     # LITHUANIA
         'LU' => array('####'),                      # LUXEMBOURG
         'LV' => array('####'),                      # LATVIA
-        'LY' => array('#####'),                     # LIBYAN ARAB JAMAHIRIYA
+        'LY' => array(),                            # LIBYAN ARAB JAMAHIRIYA
 
         'MA' => array('#####'),                     # MOROCCO
-        'MC' => array('#8000', '#####'),            # MONACO
+        'MC' => array('#####'),                     # MONACO
         'MD' => array('####'),                      # MOLDOVA
         'ME' => array('#####'),                     # MONTENEGRO
         'MF' => array(),                            # Saint-Martin
@@ -185,50 +185,50 @@ class Validator
         'MH' => array('#####'),                     # MARSHALL ISLANDS
         'MK' => array('####'),                      # MACEDONIA
         'ML' => array(),                            # MALI
-        'MM' => array('#####'),                     # MYANMAR
-        'MN' => array('#####', '######'),           # MONGOLIA
+        'MM' => array(),                            # MYANMAR
+        'MN' => array('######'),                    # MONGOLIA
         'MO' => array(),                            # MACAU
-        'MP' => array('#####'),                     # NORTHERN MARIANA ISLANDS
+        'MP' => array('#####'),                     # SAIPAN, NORTHERN MARIANA ISLANDS
         'MQ' => array('#####'),                     # MARTINIQUE
         'MR' => array(),                            # MAURITANIA
         'MS' => array(),                            # MONTSERRAT
-        'MT' => array('@@@ ####'),                  # MALTA
+        'MT' => array('@@ ###', '@@ ##'),           # MALTA
         'MU' => array(),                            # MAURITIUS
         'MV' => array('####', '#####'),             # MALDIVES
         'MW' => array(),                            # MALAWI
-        'MX' => array('#####', '####'),             # MEXICO
+        'MX' => array('#####'),                     # MEXICO
         'MY' => array('#####'),                     # MALAYSIA
-        'MZ' => array('#####'),                     # MOZAMBIQUE
+        'MZ' => array(),                            # MOZAMBIQUE
 
         'NA' => array(),                            # NAMIBIA
-        'NC' => array('#####'),                     # NEW CALEDONIA
-        'NE' => array('####'),                      # NIGER
+        'NC' => array(),                            # NEW CALEDONIA
+        'NE' => array(),                            # NIGER
         'NF' => array(),                            # NORFOLK ISLAND
-        'NG' => array('######'),                    # NIGERIA
-        'NI' => array('###-###-#'),                 # NICARAGUA
-        'NL' => array('#### @@', '####@@'),         # NETHERLANDS
+        'NG' => array(),                            # NIGERIA
+        'NI' => array(),                            # NICARAGUA
+        'NL' => array('#### @@'),                   # NETHERLANDS
         'NO' => array('####'),                      # NORWAY
-        'NP' => array('#####'),                     # NEPAL
+        'NP' => array(),                            # NEPAL
         'NR' => array(),                            # NAURU
         'NU' => array(),                            # NIUE
-        'NZ' => array('####'),                      # NEW ZEALAND
+        'NZ' => array(),                            # NEW ZEALAND
 
-        'OM' => array('###'),                       # OMAN
+        'OM' => array(),                            # OMAN
 
         'PA' => array(),                            # PANAMA
-        'PE' => array('##'),                        # PERU
-        'PF' => array('#####'),                     # FRENCH POLYNESIA
-        'PG' => array('###'),                       # PAPUA NEW GUINEA
+        'PE' => array(),                            # PERU
+        'PF' => array(),                            # FRENCH POLYNESIA
+        'PG' => array(),                            # PAPUA NEW GUINEA
         'PH' => array('####'),                      # PHILIPPINES
         'PK' => array('#####'),                     # PAKISTAN
         'PL' => array('##-###'),                    # POLAND
-        'PM' => array('#####'),                     # ST. PIERRE AND MIQUELON
+        'PM' => array(),                            # ST. PIERRE AND MIQUELON
         'PN' => array(),                            # PITCAIRN
         'PR' => array('#####'),                     # PUERTO RICO
         'PS' => array(),                            # PALESTINIAN TERRITORY
         'PT' => array('####-###', '####'),          # PORTUGAL
-        'PW' => array('#####'),                     # PALAU
-        'PY' => array('####'),                      # PARAGUAY
+        'PW' => array(),                            # PALAU
+        'PY' => array(),                            # PARAGUAY
 
         'QA' => array(),                            # QATAR
 
@@ -238,30 +238,30 @@ class Validator
         'RU' => array('######'),                    # RUSSIA
         'RW' => array(),                            # RWANDA
 
-        'SA' => array('#####'),                     # SAUDI ARABIA
+        'SA' => array(),                            # SAUDI ARABIA
         'SB' => array(),                            # SOLOMON ISLANDS
         'SC' => array(),                            # SEYCHELLES
-        'SD' => array('#####'),                     # SUDAN
-        'SE' => array('### ##', '#####'),           # SWEDEN
+        'SD' => array(),                            # SUDAN
+        'SE' => array('### ##'),                    # SWEDEN
         'SG' => array('######'),                    # SINGAPORE
         'SH' => array(),                            # ST. HELENA
         'SI' => array('####'),                      # SLOVENIA
-        'SJ' => array('####'),                      # SVALBARD AND JAN MAYEN ISLANDS
+        'SJ' => array(),                            # SVALBARD AND JAN MAYEN ISLANDS
         'SK' => array('### ##'),                    # SLOVAKIA
         'SL' => array(),                            # SIERRA LEONE
-        'SM' => array('#####'),                     # SAN MARINO
+        'SM' => array(),                            # SAN MARINO
         'SN' => array(),                            # SENEGAL
         'SO' => array(),                            # SOMALIA
         'SR' => array(),                            # SURINAME
         'SS' => array(),                            # Südsudan
         'ST' => array(),                            # SAO TOME AND PRINCIPE
-        'SV' => array('####'),                      # EL SALVADOR
+        'SV' => array(),                            # EL SALVADOR
         'SX' => array(),                            # Sint Maarten
         'SY' => array(),                            # SYRIAN ARAB REPUBLIC
         'SZ' => array('@###'),                      # SWAZILAND
 
         'TA' => array(),                            # Tristan da Cunha
-        'TC' => array('TKC@ 1ZZ'),                  # TURKS AND CAICOS ISLANDS
+        'TC' => array(),                            # TURKS AND CAICOS ISLANDS
         'TD' => array(),                            # CHAD
         'TF' => array(),                            # FRENCH SOUTHERN TERRITORIES
         'TG' => array(),                            # TOGO
@@ -270,7 +270,7 @@ class Validator
         'TK' => array(),                            # TOKELAU
         'TL' => array(),                            # EAST TIMOR
         'TM' => array('######'),                    # TURKMENISTAN
-        'TN' => array('####'),                      # TUNISIA
+        'TN' => array(),                            # TUNISIA
         'TO' => array(),                            # TONGA
         'TR' => array('#####'),                     # TURKEY
         'TT' => array(),                            # TRINIDAD AND TOBAGO
@@ -285,22 +285,22 @@ class Validator
         'UY' => array('#####'),                     # URUGUAY
         'UZ' => array('######'),                    # USBEKISTAN
 
-        'VA' => array('00120'),                     # VATICAN CITY STATE
+        'VA' => array(),                            # VATICAN CITY STATE
         'VC' => array(),                            # SAINT VINCENT AND THE GRENADINES
-        'VE' => array('####'),                      # VENEZUELA
-        'VG' => array('VG11#0'),                    # VIRGIN ISLANDS (BRITISH)
-        'VI' => array(),                            # VIRGIN ISLANDS (U.S.)
-        'VN' => array('######'),                    # VIET NAM
+        'VE' => array(),                            # VENEZUELA
+        'VG' => array(),                            # VIRGIN ISLANDS (BRITISH)
+        'VI' => array('#####'),                     # VIRGIN ISLANDS (U.S.)
+        'VN' => array(),                            # VIETNAM
         'VU' => array(),                            # VANUATU
 
-        'WF' => array('#####'),                     # WALLIS AND FUTUNA ISLANDS
-        'WS' => array('#####'),                     # SAMOA
+        'WF' => array(),                            # WALLIS AND FUTUNA ISLANDS
+        'WS' => array(),                            # SAMOA
 
         'YE' => array(),                            # YEMEN
-        'YT' => array('#####'),                     # MAYOTTE
+        'YT' => array(),                            # MAYOTTE
 
         'ZA' => array('####'),                      # SOUTH AFRICA
-        'ZM' => array('#####'),                     # ZAMBIA
+        'ZM' => array(),                            # ZAMBIA
         'ZW' => array(),                            # ZIMBABWE
     );
 
@@ -347,7 +347,6 @@ class Validator
     {
         $pattern = str_replace('#', '\d', $format);
         $pattern = str_replace('@', '[a-zA-Z]', $pattern);
-        $pattern = str_replace('*', '[a-zA-Z0-9]', $pattern);
 
         if ($ignoreSpaces)
         {

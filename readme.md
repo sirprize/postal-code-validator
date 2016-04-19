@@ -1,6 +1,6 @@
 # Postal-code-validator
 
-Validate Formatting of World-Wide Postal Codes
+Validate Formatting of World-Wide Postal Codes according to [DHL Country Code and Postcode Formats](http://www.dhl.com.tw/content/dam/downloads/tw/express/forms/postcode_formats.pdf)
 
 ## Usage
 
@@ -24,13 +24,12 @@ Validate Formatting of World-Wide Postal Codes
     use Sirprize\PostalCodeValidator\Validator;
     
     $validator = new Validator();
-    $validator->getFormats('GB'); // returns array('@# #@@', '@** #@@', '@@#* #@@')
+    $validator->getFormats('GB'); // returns array('@@## #@@', '@#@ #@@', '@@# #@@', '@@#@ #@@', '@## #@@', '@# #@@')
 
 ## Formatting
 
 + `#` = `0-9`
 + `@` = `a-zA-Z`
-+ `*` = `a-zA-Z0-9`
 
 ## Country Codes
 

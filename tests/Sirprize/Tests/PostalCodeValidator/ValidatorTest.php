@@ -92,7 +92,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     public function testSwedishCode()
     {
         $validator = new Validator();
-        $this->assertTrue($validator->isValid('SE', '11337'));
+        $this->assertTrue($validator->isValid('SE', '113 37'));
     }
 
     public function testCzechCode()
