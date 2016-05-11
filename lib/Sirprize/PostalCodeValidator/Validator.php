@@ -159,7 +159,7 @@ class Validator
         'KN' => array(),                            # SAINT KITTS AND NEVIS
         'KO' => array(),                            # Kosovo
         'KP' => array(),                            # NORTH KOREA
-        'KR' => array('###-###'),                   # SOUTH KOREA
+        'KR' => array('###-###', '#####'),          # SOUTH KOREA
         'KW' => array(),                            # KUWAIT
         'KY' => array(),                            # CAYMAN ISLANDS
         'KZ' => array('######'),                    # KAZAKHSTAN
