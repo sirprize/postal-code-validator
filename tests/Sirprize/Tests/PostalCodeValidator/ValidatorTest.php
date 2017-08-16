@@ -51,6 +51,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     {
         $validator = new Validator();
         $this->assertTrue($validator->isValid('JP', '155-0031'));
+        $this->assertFalse($validator->isValid('JP', '1550031'));
     }
     
     public function testUsCode()
