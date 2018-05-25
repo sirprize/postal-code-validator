@@ -1,6 +1,6 @@
 # Postal-code-validator
 
-Validate Formatting of World-Wide Postal Codes according to [DHL Country Code and Postcode Formats](http://www.dhl.com.tw/content/dam/downloads/tw/express/forms/postcode_formats.pdf)
+Validate Formatting of World-Wide Postal Codes according this ["List of postal codes" article on Wikipedia](https://en.wikipedia.org/wiki/List_of_postal_codes)
 
 ## Usage
 
