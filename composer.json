@@ -9,13 +9,16 @@
         { "name": "Christian Hoegl", "email": "chrigu@sirprize.me" }
     ],
     "autoload": {
-        "psr-0": { "Sirprize\\PostalCodeValidator": "lib/" }
+        "psr-4": { "Sirprize\\PostalCodeValidator\\": "lib/Sirprize/PostalCodeValidator" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Sirprize\\Tests\\PostalCodeValidator\\": "tests/Sirprize/Tests/PostalCodeValidator" }
     },
     "require": {
         "php": ">=5.3.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.1.*"
+        "phpunit/phpunit": "^4.8.36 || ^5.5 || ^6.5"
     },
     "extra": {
         "branch-alias": {

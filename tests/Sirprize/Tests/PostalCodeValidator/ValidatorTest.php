@@ -9,8 +9,9 @@
 namespace Sirprize\Tests\PostalCodeValidator;
 
 use Sirprize\PostalCodeValidator\Validator;
+use PHPUnit\Framework\TestCase;
 
-class ValidatorTest extends \PHPUnit_Framework_TestCase
+class ValidatorTest extends TestCase
 {
     
     /**
@@ -102,5 +103,27 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($validator->isValid('CZ', '602 00'));
         $this->assertFalse($validator->isValid('CZ', '60200'));
         $this->assertTrue($validator->isValid('CZ', '60200', true));
+    }
+
+    public function testGetFormats()
+    {
+        $validator = new Validator();
+        $this->assertSame(array('###', '###-##'), $validator->getFormats('TW'));
+    }
+
+    /**
+     * @expectedException Sirprize\PostalCodeValidator\ValidationException
+     */
+    public function testGetFormatsWithInvalidCountryCode()
+    {
+        $validator = new Validator();
+        $validator->getFormats('invalid_postal_code');
+    }
+
+    public function testHasCountry()
+    {
+        $validator = new Validator();
+        $this->assertTrue($validator->hasCountry('TW'));
+        $this->assertFalse($validator->hasCountry('invalid_postal_code'));
     }
 }
