@@ -136,7 +136,7 @@ class Validator
 
         'IC' => array('#####'),                     # THE CANARY ISLANDS
         'ID' => array('#####'),                     # INDONESIA
-        'IE' => array('@## @#@#', '@## @@##', '@## @#@@', 'D6W @#@#', 'D6W @@##', 'D6W @#@@'), # IRELAND
+        'IE' => array('@## @@#@', '@## @#@#', '@## @@##', '@## @#@@', 'D6W @#@#', 'D6W @@##', 'D6W @#@@'), # IRELAND
         'IL' => array('#######'),                   # ISRAEL
         'IM' => array('IM# #@@', 'IM## #@@'),       # Isle of Man
         'IN' => array('######', '### ###'),         # INDIA
