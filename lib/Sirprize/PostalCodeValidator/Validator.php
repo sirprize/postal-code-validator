@@ -136,7 +136,7 @@ class Validator
 
         'IC' => array('#####'),                     # THE CANARY ISLANDS
         'ID' => array('#####'),                     # INDONESIA
-        'IE' => array('@## @@#@', '@## @#@#', '@## @@##', '@## @#@@', 'D6W @#@#', 'D6W @@##', 'D6W @#@@'), # IRELAND
+        'IE' => array('@** ****'),                  # IRELAND
         'IL' => array('#######'),                   # ISRAEL
         'IM' => array('IM# #@@', 'IM## #@@'),       # Isle of Man
         'IN' => array('######', '### ###'),         # INDIA
@@ -347,6 +347,7 @@ class Validator
     {
         $pattern = str_replace('#', '\d', $format);
         $pattern = str_replace('@', '[a-zA-Z]', $pattern);
+        $pattern = str_replace('*', '[a-zA-Z0-9]', $pattern);
 
         if ($ignoreSpaces)
         {

@@ -105,6 +105,12 @@ class ValidatorTest extends TestCase
         $this->assertTrue($validator->isValid('CZ', '60200', true));
     }
 
+    public function testIrelandCode()
+    {
+        $validator = new Validator();
+        $this->assertTrue($validator->isValid('IE', 'T12 Y03W'));
+    }
+
     public function testGetFormats()
     {
         $validator = new Validator();
