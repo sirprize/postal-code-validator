@@ -24,7 +24,7 @@ Validate Formatting of World-Wide Postal Codes according this ["List of postal c
     use Sirprize\PostalCodeValidator\Validator;
     
     $validator = new Validator();
-    $validator->getFormats('GB'); // returns array('@@## #@@', '@#@ #@@', '@@# #@@', '@@#@ #@@', '@## #@@', '@# #@@')
+    $validator->getFormats('GB'); // returns ['@@## #@@', '@#@ #@@', '@@# #@@', '@@#@ #@@', '@## #@@', '@# #@@']
 
 ## Formatting
 

@@ -5,22 +5,23 @@
  *
  * (c) Christian Hoegl <chrigu@sirprize.me>
  */
- 
+
 namespace Sirprize\PostalCodeValidator;
 
 /**
- * Validator.
+ * Validator
  *
  * @author Christian Hoegl <chrigu@sirprize.me>
  */
- 
 class Validator
 {
-    /*
+    /**
      * country code: ISO 3166 2-letter code
      * format:
      *     # - numberic 0-9
      *     @ - alpha a-zA-Z
+     *
+     * @var array
      */
     protected $formats = array(
         'AC' => array(),                            # Ascension
@@ -304,53 +305,72 @@ class Validator
         'ZW' => array(),                            # ZIMBABWE
     );
 
+    /**
+     * @param string $countryCode
+     * @param string $postalCode
+     * @param bool $ignoreSpaces
+     *
+     * @return bool
+     * @throws \Sirprize\PostalCodeValidator\ValidationException
+     */
     public function isValid($countryCode, $postalCode, $ignoreSpaces = false)
     {
-        if(!isset($this->formats[$countryCode]))
-        {
+        if (!isset($this->formats[$countryCode])) {
             throw new ValidationException(sprintf('Invalid country code: "%s"', $countryCode));
         }
-        
-        foreach($this->formats[$countryCode] as $format)
-        {
+
+        foreach($this->formats[$countryCode] as $format) {
             #echo $postalCode . ' - ' . $this->getFormatPattern($format)."\n";
-            if(preg_match($this->getFormatPattern($format, $ignoreSpaces), $postalCode))
-            {
+            if (preg_match($this->getFormatPattern($format, $ignoreSpaces), $postalCode)) {
                 return true;
             }
         }
-        
-        if(!count($this->formats[$countryCode]))
-        {
+
+        if (!count($this->formats[$countryCode])) {
             return true;
         }
-        
+
         return false;
     }
-    
+
+    /**
+     * @param string $countryCode
+     *
+     * @return mixed
+     * @throws \Sirprize\PostalCodeValidator\ValidationException
+     */
     public function getFormats($countryCode)
     {
-        if(!isset($this->formats[$countryCode]))
-        {
+        if (!isset($this->formats[$countryCode])) {
             throw new ValidationException(sprintf('Invalid country code: "%s"', $countryCode));
         }
-        
+
         return $this->formats[$countryCode];
     }
-    
+
+    /**
+     * @param string $countryCode
+     *
+     * @return bool
+     */
     public function hasCountry($countryCode)
     {
         return (isset($this->formats[$countryCode]));
     }
-    
+
+    /**
+     * @param string $format
+     * @param bool $ignoreSpaces
+     *
+     * @return string
+     */
     protected function getFormatPattern($format, $ignoreSpaces = false)
     {
         $pattern = str_replace('#', '\d', $format);
         $pattern = str_replace('@', '[a-zA-Z]', $pattern);
         $pattern = str_replace('*', '[a-zA-Z0-9]', $pattern);
 
-        if ($ignoreSpaces)
-        {
+        if ($ignoreSpaces) {
             $pattern = str_replace(' ', ' ?', $pattern);
         }
 

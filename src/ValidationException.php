@@ -5,14 +5,14 @@
  *
  * (c) Christian Hoegl <chrigu@sirprize.me>
  */
- 
+
 namespace Sirprize\PostalCodeValidator;
 
 /**
- * ValidationException.
+ * ValidationException
  *
  * @author Christian Hoegl <chrigu@sirprize.me>
  */
- 
 class ValidationException extends \Exception
-{}
+{
+}
