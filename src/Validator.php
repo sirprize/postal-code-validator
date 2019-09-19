@@ -172,7 +172,7 @@ class Validator
         'LK' => array('#####'),                     # SRI LANKA
         'LR' => array('####'),                      # LIBERIA
         'LS' => array('###'),                       # LESOTHO
-        'LT' => array('LT-#####'),                  # LITHUANIA
+        'LT' => array('LT-#####', '#####'),         # LITHUANIA
         'LU' => array('####'),                      # LUXEMBOURG
         'LV' => array('LV-####'),                   # LATVIA
         'LY' => array(),                            # LIBYAN ARAB JAMAHIRIYA
