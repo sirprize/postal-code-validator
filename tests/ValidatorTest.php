@@ -8,19 +8,12 @@
 
 namespace Sirprize\PostalCodeValidator\Tests;
 
+use Sirprize\PostalCodeValidator\ValidationException;
 use Sirprize\PostalCodeValidator\Validator;
 use PHPUnit\Framework\TestCase;
 
 class ValidatorTest extends TestCase
 {
-    /**
-     * @expectedException \Sirprize\PostalCodeValidator\ValidationException
-     */
-    public function testInvalidCountryCode()
-    {
-        $validator = new Validator();
-        $validator->isValid('XXXXXX', 'YYYYYY');
-    }
 
     public function testUkCode()
     {
@@ -104,10 +97,16 @@ class ValidatorTest extends TestCase
         $this->assertTrue($validator->isValid('CZ', '60200', true));
     }
 
-    public function testIrelandCode()
+    /**
+     * @test
+     * @throws ValidationException
+     *
+     * Test if getFormats() works. TW is just an example country code
+     */
+    public function testGetFormats()
     {
         $validator = new Validator();
-        $this->assertTrue($validator->isValid('IE', 'T12 Y03W'));
+        $this->assertSame(array('###', '###-##'), $validator->getFormats('TW'));
     }
 
     public function testGetFormats()
