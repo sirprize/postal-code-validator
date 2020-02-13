@@ -14,82 +14,112 @@ use PHPUnit\Framework\TestCase;
 
 class ValidatorTest extends TestCase
 {
-
-    public function testUkCode()
+    public function dataProviderPostalCodes()
     {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('GB', 'TN1 2GE'));
-        $this->assertTrue($validator->isValid('GB', 'BD16 3QA'));
+        return [
+            'BE Belgium' => [
+                'country' => 'BE',
+                'valid' => ['3007'],
+                'invalid' => [],
+            ],
+            'CH Switzerland' => [
+                'country' => 'CH',
+                'valid' => ['3007'],
+                'invalid' => [],
+            ],
+            'CZ Czech Republic' => [
+                'country' => 'CZ',
+                'valid' => ['602 00'],
+                'invalid' => ['60200'],
+            ],
+            'DE Germany' => [
+                'country' => 'DE',
+                'valid' => ['50672'],
+                'invalid' => [],
+            ],
+            'EE Estonia' => [
+                'country' => 'EE',
+                'valid' => ['10123'],
+                'invalid' => [],
+            ],
+            'FI inland' => [
+                'country' => 'FI',
+                'valid' => ['00160'],
+                'invalid' => [],
+            ],
+            'GB Great Britain' => [
+                'country' => 'GB',
+                'valid' => ['TN1 2GE', 'BD16 3QA'],
+                'invalid' => [],
+            ],
+            'IE Ireland' => [
+                'country' => 'IE',
+                'valid' => ['T12 Y03W'],
+                'invalid' => [],
+            ],
+            'IT Italy' => [
+                'country' => 'IT',
+                'valid' => ['00146'],
+                'invalid' => [],
+            ],
+            'JP Japan' => [
+                'country' => 'JP',
+                'valid' => ['155-0031'],
+                'invalid' => ['1550031'],
+            ],
+            'NL Netherlands' => [
+                'country' => 'NL',
+                'valid' => ['1234AB', '1234 AB'],
+                'invalid' => ['1234', '1234  AB'],
+            ],
+            'PT Portugal' => [
+                'country' => 'PT',
+                'valid' => ['2765-073'],
+                'invalid' => [],
+            ],
+            'RU Russia' => [
+                'country' => 'RU',
+                'valid' => ['624800'],
+                'invalid' => [],
+            ],
+            'SE Sweden' => [
+                'country' => 'SE',
+                'valid' => ['113 37'],
+                'invalid' => [],
+            ],
+            'US USA' => [
+                'country' => 'US',
+                'valid' => ['81301'],
+                'invalid' => [],
+            ],
+        ];
     }
 
-    public function testSwissCode()
+    /**
+     * @dataProvider dataProviderPostalCodes
+     * @param string $country
+     * @param string[] $validPostalCodes
+     * @param string[] $invalidPostalCodes
+     * @throws ValidationException
+     */
+    public function testValidPostalCodes($country, $validPostalCodes, $invalidPostalCodes)
     {
         $validator = new Validator();
-        $this->assertTrue($validator->isValid('CH', '3007'));
+        foreach ($validPostalCodes as $postalCode) {
+            $this->assertTrue($validator->isValid($country, $postalCode));
+        }
+
+        foreach ($invalidPostalCodes as $postalCode) {
+            $this->assertFalse($validator->isValid($country, $postalCode));
+        }
     }
 
-    public function testGermanCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('DE', '50672'));
-    }
-
-    public function testPortugeseCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('PT', '2765-073'));
-    }
-
-    public function testJapaneseCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('JP', '155-0031'));
-        $this->assertFalse($validator->isValid('JP', '1550031'));
-    }
-
-    public function testUsCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('US', '81301'));
-    }
-
-    public function testEstonianCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('EE', '10123'));
-    }
-
-    public function testRussianCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('RU', '624800'));
-    }
-
-    public function testBelgianCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('BE', '1620'));
-    }
-
-    public function testItalianCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('IT', '00146'));
-    }
-
-    public function testFinnishCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('FI', '00160'));
-    }
-
-    public function testSwedishCode()
-    {
-        $validator = new Validator();
-        $this->assertTrue($validator->isValid('SE', '113 37'));
-    }
-
-    public function testCzechCode()
+    /**
+     * @test
+     *
+     * Test if ignoreSpaces options works. CZ is just an example country code
+     */
+    public function testIgnoreSpaces()
     {
         $validator = new Validator();
         $this->assertTrue($validator->isValid('CZ', '602 00'));
@@ -109,10 +139,12 @@ class ValidatorTest extends TestCase
         $this->assertSame(array('###', '###-##'), $validator->getFormats('TW'));
     }
 
-    public function testGetFormats()
+    public function testInvalidCountryCode()
     {
+        $this->expectException(ValidationException::class);
+
         $validator = new Validator();
-        $this->assertSame(array('###', '###-##'), $validator->getFormats('TW'));
+        $validator->isValid('XXXXXX', 'YYYYYY');
     }
 
     public function testGetFormatsWithInvalidCountryCode()
