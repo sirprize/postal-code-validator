@@ -116,11 +116,10 @@ class ValidatorTest extends TestCase
         $this->assertSame(array('###', '###-##'), $validator->getFormats('TW'));
     }
 
-    /**
-     * @expectedException \Sirprize\PostalCodeValidator\ValidationException
-     */
     public function testGetFormatsWithInvalidCountryCode()
     {
+        $this->expectException(ValidationException::class);
+
         $validator = new Validator();
         $validator->getFormats('invalid_postal_code');
     }
