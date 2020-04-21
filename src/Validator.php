@@ -291,7 +291,7 @@ class Validator
         'VE' => ['####', '####-@'],            # VENEZUELA
         'VG' => ['VG####'],                    # VIRGIN ISLANDS (BRITISH)
         'VI' => ['#####', '#####-####'],       # VIRGIN ISLANDS (U.S.)
-        'VN' => ['######'],                    # VIETNAM
+        'VN' => ['#####'],                     # VIETNAM
         'VU' => [],                            # VANUATU
 
         'WF' => ['986##'],                     # WALLIS AND FUTUNA ISLANDS
