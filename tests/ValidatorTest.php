@@ -54,8 +54,8 @@ class ValidatorTest extends TestCase
             ],
             'IE Ireland' => [
                 'country' => 'IE',
-                'valid' => ['T12 Y03W'],
-                'invalid' => [],
+                'valid' => ['T12 Y03W', 'D6W XK06'],
+                'invalid' => ['BT7 90HR'],
             ],
             'IT Italy' => [
                 'country' => 'IT',

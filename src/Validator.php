@@ -137,7 +137,7 @@ class Validator
 
         'IC' => ['#####'],                     # THE CANARY ISLANDS
         'ID' => ['#####'],                     # INDONESIA
-        'IE' => ['@** ****'],                  # IRELAND
+        'IE' => ['@#* ****'],                  # IRELAND
         'IL' => ['#######'],                   # ISRAEL
         'IM' => ['IM# #@@', 'IM## #@@'],       # Isle of Man
         'IN' => ['######', '### ###'],         # INDIA
