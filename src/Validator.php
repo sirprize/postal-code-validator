@@ -173,7 +173,7 @@ class Validator
         'LR' => ['####'],                      # LIBERIA
         'LS' => ['###'],                       # LESOTHO
         'LT' => ['LT-#####', '#####'],         # LITHUANIA
-        'LU' => ['L-####', '####'],                      # LUXEMBOURG
+        'LU' => ['L-####', '####'],            # LUXEMBOURG
         'LV' => ['LV-####'],                   # LATVIA
         'LY' => [],                            # LIBYAN ARAB JAMAHIRIYA
 
