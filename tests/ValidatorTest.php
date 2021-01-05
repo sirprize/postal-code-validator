@@ -67,6 +67,11 @@ class ValidatorTest extends TestCase
                 'valid' => ['155-0031'],
                 'invalid' => ['1550031'],
             ],
+            'LU Luxembourg' => [
+                'country' => 'LU',
+                'valid' => ['1099', 'L-1099'],
+                'invalid' => ['123', '12345', 'L1099'],
+            ],
             'NL Netherlands' => [
                 'country' => 'NL',
                 'valid' => ['1234AB', '1234 AB'],
