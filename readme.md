@@ -2,6 +2,10 @@
 
 Validate Formatting of World-Wide Postal Codes according this ["List of postal codes" article on Wikipedia](https://en.wikipedia.org/wiki/List_of_postal_codes)
 
+## Installation
+
+    composer require sirprize/postal-code-validator
+
 ## Usage
 
 ### Check If Country Is Supported
