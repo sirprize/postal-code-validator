@@ -154,7 +154,7 @@ class Validator
 
         'KE' => ['#####'],                     # KENYA
         'KG' => ['######'],                    # KYRGYZSTAN
-        'KH' => ['#####'],                     # CAMBODIA
+        'KH' => ['#####', '######'],           # CAMBODIA
         'KI' => [],                            # KIRIBATI
         'KM' => [],                            # COMOROS
         'KN' => [],                            # SAINT KITTS AND NEVIS
