@@ -297,6 +297,8 @@ class Validator
         'WF' => ['986##'],                     # WALLIS AND FUTUNA ISLANDS
         'WS' => ['WS####'],                    # SAMOA
 
+        'XK' => ['#####'],                     # KOSOVO
+
         'YE' => [],                            # YEMEN
         'YT' => ['976##'],                     # MAYOTTE
 
