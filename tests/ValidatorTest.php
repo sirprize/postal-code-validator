@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 class ValidatorTest extends TestCase
 {
-    public function dataProviderPostalCodes()
+    public static function dataProviderPostalCodes()
     {
         return [
             'BE Belgium' => [
