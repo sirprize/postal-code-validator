@@ -104,7 +104,7 @@ class Validator
         'FJ' => [],                            # FIJI
         'FK' => ['FIQQ 1ZZ'],                  # FALKLAND ISLANDS (MALVINAS)
         'FM' => ['#####', '#####-####'],       # MICRONESIA
-        'FO' => ['###'],                       # FAROE ISLANDS
+        'FO' => ['###', 'FO-###'],             # FAROE ISLANDS
         'FR' => ['#####'],                     # FRANCE
         'FX' => [],                            # FRANCE, METROPOLITAN
 
